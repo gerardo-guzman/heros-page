@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app.routes';
 
 // Services
+import { HeroService } from './services/heroes.service';
 
 // Components
 import { AppComponent } from './app.component';
@@ -26,7 +27,9 @@ import { NgIf } from '@angular/common';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    HeroService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
