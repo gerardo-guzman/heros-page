@@ -14,6 +14,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { HerosComponent } from './components/heros/heros.component';
 import { NgIf } from '@angular/common';
+import { HeroComponent } from './components/hero/hero.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NgIf } from '@angular/common';
     NavbarComponent,
     HomeComponent,
     AboutComponent,
-    HerosComponent
+    HerosComponent,
+    HeroComponent
   ],
   imports: [
     BrowserModule,

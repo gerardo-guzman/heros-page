@@ -1,0 +1,24 @@
+<h1>{{hero.nombre}}<small>  ({{hero.aparicion}})</small></h1>
+<hr>
+
+<div class="row">
+  <div class="col-md-4">
+    <img src="{{hero.img}}" class="img-fluid" alt="">
+    <br><br>
+    <a [routerLink]="['/heros']" class="btn btn-outline-danger btn-block"> Volver</a>
+
+  </div>
+
+  <div class="col-md-8">
+    <h3>{{hero.nombre}}</h3>
+    <hr>
+    <p>
+      {{hero.bio}}
+    </p>
+    <div fxLayoutAlign="center">
+       <img src="assets/img/{{hero.casa}}.png" width="300px" alt="">
+    </div>
+
+  </div>
+
+</div>

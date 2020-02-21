@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroService } from '../../services/heroes.service';
+import { Router } from '@angular/router';
 
 export interface Hero {
   nombre: string;
@@ -19,7 +20,7 @@ export class HerosComponent implements OnInit {
 
   heros: Hero[] = [];
 
-  constructor(private heroService: HeroService) { }
+  constructor(private heroService: HeroService, private router: Router) { }
 
   ngOnInit() {
     /*EL ngOnInit se hace cuando la pagina esta
@@ -28,6 +29,10 @@ export class HerosComponent implements OnInit {
     // tslint:disable-next-line: no-trailing-whitespace
     this.heros = this.heroService.getHeros();
     console.log(this.heros);
+  }
+
+  verHeroe(index: number) {
+    this.router.navigate(['/hero', index]);
   }
 
 }
