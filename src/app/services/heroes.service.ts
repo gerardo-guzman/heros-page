@@ -6,7 +6,7 @@ export class HeroService {
     console.log('Servicio listo pa\'usarse');
   }
 
-  private heros: any = [
+  private heros: Hero[] = [
     {
       nombre: 'Aquaman',
       bio: 'El poder más reconocido de Aquaman es la capacidad telepática para comunicarse con la vida marina, la cual puede convocar a grandes distancias.',
@@ -66,4 +66,25 @@ export class HeroService {
     return this.heros[index];
   }
 
+  buscarHeroe(termino: string): Hero[] {
+    const heroArray: Hero[] = [];
+    termino = termino.toLowerCase();
+
+    for (const hero of this.heros) {
+      const nombre = hero.nombre.toLowerCase();
+      if (nombre.indexOf(termino) >= 0) {
+        heroArray.push( hero );
+      }
+    }
+    return heroArray;
+  }
+
+}
+
+export interface Hero {
+  nombre: string;
+  bio: string;
+  img: string;
+  aparicion: string;
+  casa: string;
 }
